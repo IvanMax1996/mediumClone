@@ -1,0 +1,60 @@
+<div *ngIf='userProfile' class='profile-page'>
+  <div class='user-info'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-xs-12 col-md-10 offset-md-1'>
+          <img class='user-img' [src]='userProfile.image' alt='user-avatar' />
+          <h4>{{userProfile.username}}</h4>
+          <p>{{userProfile.bio}}</p>
+          <div>
+            <button
+              *ngIf='!(isCurrentUserProfile$ | async)'
+              class='btn btn-sm btn-secondary action-btn'
+            >
+              Unfollow {{userProfile.username}}
+            </button>
+            <a
+              *ngIf='isCurrentUserProfile$ | async'
+              class='btn btn-sm btn-outline-secondary action-btn'
+              routerLink='/settings'
+            >
+              Edit profile Settings
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-10 offset-md-1'>
+        <div class='articles-toggle'>
+          <ul class='nav nav-pills outline-active'>
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                [routerLink]="['/profiles', userProfile.username]"
+                routerLinkActive='active'
+                [routerLinkActiveOptions]='{exact: true}'
+              >
+                My Posts
+              </a>
+            </li>
+
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                [routerLink]="['/profiles', userProfile.username, 'favorites']"
+                routerLinkActive='active'
+              >
+                Favorites Posts
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <mc-feed [apiUrl]='getApiUrl()'></mc-feed>
+      </div>
+    </div>
+  </div>
+</div>

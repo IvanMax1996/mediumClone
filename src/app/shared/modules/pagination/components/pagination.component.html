@@ -1,0 +1,23 @@
+<ul class='pagination'>
+  <li
+    class='page-item'
+    *ngFor='let page of pages'
+    [ngClass]='{active: currentPageProps === page}'
+  >
+    <a *ngIf='page > 1; else disabledLink'
+      class='page-link'
+      [routerLink]='urlProps'
+      [queryParams]='{page}'
+    >
+      {{page}}
+    </a>
+    <ng-template #disabledLink>
+      <a
+         class='page-link'
+         [routerLink]='urlProps'
+      >
+        {{page}}
+      </a>
+    </ng-template>
+  </li>
+</ul>
