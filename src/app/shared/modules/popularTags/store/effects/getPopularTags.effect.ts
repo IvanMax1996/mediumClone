@@ -10,7 +10,6 @@ import {
   getPopularTagsSuccessAction
 } from "../actions/getPopularTags.action"
 import {PopularTagType} from "../../../../types/popularTag.type"
-import {ActivatedRoute, Router} from "@angular/router"
 
 @Injectable()
 export class GetPopularTagsEffect {
