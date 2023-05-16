@@ -5,7 +5,6 @@ import {select, Store} from "@ngrx/store"
 import {getUserProfileAction} from "../../store/actions/getUserProfile.action"
 import {
   ActivatedRoute,
-  IsActiveMatchOptions,
   Params,
   Router
 } from "@angular/router"

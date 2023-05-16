@@ -1,13 +1,12 @@
 import {Component, OnInit} from "@angular/core"
 import {select, Store} from "@ngrx/store"
-import {filter, Observable, Subscription} from "rxjs"
+import {Observable, Subscription} from "rxjs"
 import {CurrentUserInterface} from "../../../types/currentUser.interface"
 import {
   currentUserSelector,
   isAnonymousSelector,
   isLoggedInSelector
 } from "../../../../auth/store/selectors"
-import {map} from "rxjs/operators"
 
 @Component({
   selector: "mc-topBar",

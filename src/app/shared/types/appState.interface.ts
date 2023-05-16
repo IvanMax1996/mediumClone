@@ -5,7 +5,6 @@ import {ArticleStateInterface} from "../../article/types/articleState.interface"
 import {CreateArticleStateInterface} from "../../createArticle/types/createArticleState.interface"
 import {EditArticleStateInterface} from "../../editArticle/types/editArticleState.interface"
 import {SettingsStateInterface} from "../../settings/types/settingsState.interface"
-import {ProfileInterface} from "./profile.interface"
 import {UserProfileStateInterface} from "../../userProfile/types/userProfileState.interface"
 
 export interface AppStateInterface {

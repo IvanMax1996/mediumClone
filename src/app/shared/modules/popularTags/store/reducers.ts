@@ -5,8 +5,6 @@ import {
   getPopularTagsFailureAction,
   getPopularTagsSuccessAction
 } from "./actions/getPopularTags.action"
-import {routerNavigatedAction} from "@ngrx/router-store"
-import {FeedStateInterface} from "../../feed/types/feedState.interface"
 
 const initialState: PopularTagsStateInterface = {
   data: null,

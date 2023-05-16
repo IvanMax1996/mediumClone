@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core"
 import {Actions, createEffect, ofType} from "@ngrx/effects"
-import {catchError, map, switchMap, tap} from "rxjs/operators"
+import {catchError, map, switchMap} from "rxjs/operators"
 import {of} from "rxjs"
 
 import {PopularTagsService} from "../../services/popularTags.service"
@@ -10,7 +10,7 @@ import {
   getPopularTagsSuccessAction
 } from "../actions/getPopularTags.action"
 import {PopularTagType} from "../../../../types/popularTag.type"
-import {ActivatedRoute, Params, Router} from "@angular/router"
+import {ActivatedRoute, Router} from "@angular/router"
 
 @Injectable()
 export class GetPopularTagsEffect {
@@ -32,8 +32,6 @@ export class GetPopularTagsEffect {
 
   constructor(
     private actions$: Actions,
-    private popularTagsService: PopularTagsService,
-    private router: Router,
-    private route: ActivatedRoute
+    private popularTagsService: PopularTagsService
   ) {}
 }
